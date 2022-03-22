@@ -1,5 +1,7 @@
 package com.example.user.data;
 
+import com.example.user.dto.UserDto;
+
 import java.util.Date;
 
 public class User {
@@ -23,6 +25,13 @@ public class User {
         this.createdAt = new Date();
     }
 
+    public User(UserDto userDto) {
+        this.name = userDto.getName();
+        this.lastName = userDto.getLastName();
+        this.email = userDto.getEmail();
+        this.createdAt = new Date();
+    }
+
     public String getId() {
         return id;
     }
@@ -33,6 +42,18 @@ public class User {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getEmail() {
